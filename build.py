@@ -1,8 +1,8 @@
 #!/usr/bin/python
 
-module = 'fx'
+module = 'VREditor'
 input_path = 'src/'
-output_path = 'glfx.js'
+output_path = 'editor.js'
 
 import re, os, sys, time, tempfile
 

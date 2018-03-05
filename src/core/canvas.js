@@ -129,10 +129,10 @@ function wrap(func) {
     };
 }
 
-exports.canvas = function() {
-    var canvas = document.createElement('canvas');
+exports.canvas = function(_c) {
+    var canvas = _c; //document.createElement('canvas');
     try {
-        gl = canvas.getContext('experimental-webgl', { premultipliedAlpha: false });
+        gl = canvas.getContext('experimental-webgl', { premultipliedAlpha: false, preserveDrawingBuffer: true });
     } catch (e) {
         gl = null;
     }
@@ -178,6 +178,8 @@ exports.canvas = function() {
     canvas.vignette = wrap(vignette);
     canvas.vibrance = wrap(vibrance);
     canvas.sepia = wrap(sepia);
+    //custom method
+    canvas.rectanglePixelate = wrap(rectanglePixelate);
 
     return canvas;
 };
